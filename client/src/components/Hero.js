@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaDownload } from 'react-icons/fa';
-import { usePortfolio } from '../context/PortfolioContext';
+import { usePortfolio } from '../context/StaticPortfolioContext';
 import './Hero.css';
 
 const Hero = () => {

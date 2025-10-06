@@ -73,13 +73,43 @@ const staticPortfolioData = {
 };
 
 export const PortfolioProvider = ({ children }) => {
+  // Mock functions for static deployment
+  const mockFunction = () => {
+    console.log('Function called in static mode - no backend available');
+  };
+
   const value = {
     portfolio: staticPortfolioData,
     loading: false,
     error: null,
     user: null,
     isAuthenticated: false,
-    directAdminAccess: false
+    directAdminAccess: false,
+    
+    // Mock functions for admin functionality
+    login: mockFunction,
+    register: mockFunction,
+    logout: mockFunction,
+    changePassword: mockFunction,
+    
+    // Mock functions for portfolio management
+    updatePortfolio: mockFunction,
+    addSkill: mockFunction,
+    updateSkill: mockFunction,
+    deleteSkill: mockFunction,
+    addProject: mockFunction,
+    updateProject: mockFunction,
+    deleteProject: mockFunction,
+    addExperience: mockFunction,
+    updateExperience: mockFunction,
+    deleteExperience: mockFunction,
+    addEducation: mockFunction,
+    updateEducation: mockFunction,
+    deleteEducation: mockFunction,
+    
+    // Mock functions for contact
+    sendContactMessage: mockFunction,
+    getContactMessages: mockFunction
   };
 
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaLock, FaEye, FaEyeSlash, FaSave, FaTimes } from 'react-icons/fa';
-import { usePortfolio } from '../../context/PortfolioContext';
+import { usePortfolio } from '../../context/StaticPortfolioContext';
 import './ChangePassword.css';
 
 const ChangePassword = ({ onClose }) => {

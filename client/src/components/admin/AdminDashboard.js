@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaUser, FaSignOutAlt, FaCog, FaEye, FaEdit, FaKey } from 'react-icons/fa';
-import { usePortfolio } from '../../context/PortfolioContext';
+import { usePortfolio } from '../../context/StaticPortfolioContext';
 import PersonalInfoForm from './PersonalInfoForm';
 import SkillsManager from './SkillsManager';
 import ProjectsManager from './ProjectsManager';

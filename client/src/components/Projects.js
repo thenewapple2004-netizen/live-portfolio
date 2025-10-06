@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaGithub, FaExternalLinkAlt, FaCode, FaEye } from 'react-icons/fa';
-import { usePortfolio } from '../context/PortfolioContext';
+import { usePortfolio } from '../context/StaticPortfolioContext';
 import './Projects.css';
 
 const Projects = () => {

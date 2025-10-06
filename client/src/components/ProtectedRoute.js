@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { usePortfolio } from '../context/PortfolioContext';
+import { usePortfolio } from '../context/StaticPortfolioContext';
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = usePortfolio();

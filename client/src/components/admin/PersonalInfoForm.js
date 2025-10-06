@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaSave, FaUpload, FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
-import { usePortfolio } from '../../context/PortfolioContext';
+import { usePortfolio } from '../../context/StaticPortfolioContext';
 import './AdminForms.css';
 
 const PersonalInfoForm = () => {

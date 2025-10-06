@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaCode, FaRocket, FaUsers, FaLightbulb } from 'react-icons/fa';
-import { usePortfolio } from '../context/PortfolioContext';
+import { usePortfolio } from '../context/StaticPortfolioContext';
 import './About.css';
 
 const About = () => {

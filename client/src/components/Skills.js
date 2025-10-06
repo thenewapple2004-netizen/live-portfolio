@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { usePortfolio } from '../context/PortfolioContext';
+import { usePortfolio } from '../context/StaticPortfolioContext';
 import './Skills.css';
 
 const Skills = () => {

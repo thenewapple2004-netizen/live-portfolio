@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaEnvelope, FaEye, FaTrash, FaReply, FaPaperPlane } from 'react-icons/fa';
 import axios from 'axios';
-import { usePortfolio } from '../../context/PortfolioContext';
+import { usePortfolio } from '../../context/StaticPortfolioContext';
 import toast from 'react-hot-toast';
 import './AdminForms.css';
 

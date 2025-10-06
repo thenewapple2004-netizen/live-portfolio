@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHeart, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { usePortfolio } from '../context/PortfolioContext';
+import { usePortfolio } from '../context/StaticPortfolioContext';
 import './Footer.css';
 
 const Footer = () => {
