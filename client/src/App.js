@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Admin from './pages/Admin';
 import SignIn from './components/admin/SignIn';
 import ProtectedRoute from './components/ProtectedRoute';
-import { PortfolioProvider } from './context/PortfolioContext';
+import { PortfolioProvider } from './context/StaticPortfolioContext';
 import './App.css';
 
 function App() {
