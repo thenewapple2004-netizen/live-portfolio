@@ -128,10 +128,36 @@ A modern, responsive portfolio website built with the MERN stack (MongoDB, Expre
    git push heroku main
    ```
 
+### Vercel Deployment
+
+1. **Connect your GitHub repository to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Vercel will automatically detect the configuration
+
+2. **Set Environment Variables in Vercel**
+   - Go to your project settings in Vercel
+   - Add these environment variables:
+   ```
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database
+   JWT_SECRET=your_super_secure_jwt_secret_key
+   EMAIL_USER=your_email@gmail.com
+   EMAIL_PASS=your_app_password
+   EMAIL_FROM=your_email@gmail.com
+   ADMIN_EMAIL=your_email@gmail.com
+   ADMIN_PHONE=+1234567890
+   NODE_ENV=production
+   CORS_ORIGIN=https://your-vercel-domain.vercel.app
+   ```
+
+3. **Deploy**
+   - Vercel will automatically build and deploy your application
+   - The `vercel.json` configuration handles the build process
+
 ### Other Platforms
-- **Vercel**: Deploy frontend, use MongoDB Atlas for database
 - **Netlify**: Deploy frontend, use external API hosting
 - **DigitalOcean**: Full-stack deployment with App Platform
+- **Railway**: Full-stack deployment with database
 
 ## 📱 Usage
 
