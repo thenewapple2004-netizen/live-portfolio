@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaUser, FaSignInAlt, FaUserPlus, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { usePortfolio } from '../context/StaticPortfolioContext';
+import { usePortfolio } from '../context/PortfolioContext';
 import AdminDashboard from '../components/admin/AdminDashboard';
 import './Admin.css';
 

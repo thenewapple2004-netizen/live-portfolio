@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FaEnvelope, FaEye, FaTrash, FaReply, FaPaperPlane } from 'react-icons/fa';
 import axios from 'axios';
-import { usePortfolio } from '../../context/StaticPortfolioContext';
+import { usePortfolio } from '../../context/PortfolioContext';
 import toast from 'react-hot-toast';
 import './AdminForms.css';
 
@@ -11,13 +11,7 @@ const ContactMessages = () => {
   const [loading, setLoading] = useState(true);
   const [selectedMessage, setSelectedMessage] = useState(null);
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      fetchMessages();
-    }
-  }, [isAuthenticated]);
-
-  const fetchMessages = async () => {
+  const fetchMessages = useCallback(async () => {
     try {
       const result = await getContactMessages();
       if (result.success) {
@@ -28,7 +22,13 @@ const ContactMessages = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [getContactMessages]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchMessages();
+    }
+  }, [isAuthenticated, fetchMessages]);
 
   const updateMessageStatus = async (messageId, status) => {
     try {

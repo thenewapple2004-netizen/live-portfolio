@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaPlus, FaEdit, FaTrash, FaGraduationCap } from 'react-icons/fa';
-import { usePortfolio } from '../../context/StaticPortfolioContext';
+import { usePortfolio } from '../../context/PortfolioContext';
 import './AdminForms.css';
 
 const EducationManager = () => {

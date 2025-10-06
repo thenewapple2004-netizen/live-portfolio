@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { usePortfolio } from '../../context/StaticPortfolioContext';
+import { usePortfolio } from '../../context/PortfolioContext';
 import './SignIn.css';
 
 const SignIn = () => {

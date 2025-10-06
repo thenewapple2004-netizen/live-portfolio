@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes, FaUser } from 'react-icons/fa';
-import { usePortfolio } from '../context/StaticPortfolioContext';
+import { usePortfolio } from '../context/PortfolioContext';
 import './Navbar.css';
 
 const Navbar = () => {

@@ -10,7 +10,8 @@
     "client": "cd client && npm start",
     "build": "cd client && npm install && npm run build",
     "install-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build"
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "vercel-build": "npm install && npm run install-client && npm run build"
   },
   "keywords": [
     "portfolio",

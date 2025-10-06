@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // Removed unused motion import
 import { FaPlus, FaEdit, FaTrash, FaCog } from 'react-icons/fa';
-import { usePortfolio } from '../../context/StaticPortfolioContext';
+import { usePortfolio } from '../../context/PortfolioContext';
 import './AdminForms.css';
 
 const SkillsManager = () => {
