@@ -29,19 +29,36 @@ app.use('/api/portfolio', require('./routes/portfolio'));
 app.use('/api/contact', require('./routes/contact'));
 app.use('/api/upload', require('./routes/upload'));
 
-// Serve static files from the React app (only in production)
+// Basic health route for root
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', service: 'portfolio-backend', env: config.server.env });
+});
+
+// Serve static files from the React app only if a build directory exists
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
-  
-  // Serve React app for any other routes
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-  });
+  const buildDir = path.join(__dirname, 'client/build');
+  const indexFile = path.join(buildDir, 'index.html');
+  try {
+    if (require('fs').existsSync(indexFile)) {
+      app.use(express.static(buildDir));
+      app.get('*', (req, res) => {
+        res.sendFile(indexFile);
+      });
+    }
+  } catch (_) {
+    // no-op: backend deployed separately from frontend
+  }
 }
 
 const PORT = config.server.port;
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
-  console.log(`🌍 Environment: ${config.server.env}`);
-  console.log(`📊 Database: ${config.database.uri.includes('mongodb+srv') ? 'MongoDB Atlas' : 'Local MongoDB'}`);
-});
+
+// In serverless (Vercel), export the app instead of listening
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server is running on port ${PORT}`);
+    console.log(`🌍 Environment: ${config.server.env}`);
+    console.log(`📊 Database: ${config.database.uri.includes('mongodb+srv') ? 'MongoDB Atlas' : 'Local MongoDB'}`);
+  });
+}
+
+module.exports = app;
